@@ -22,8 +22,23 @@ const NoteListPage = () => {
   };
 
   function displayNotes() {
-    return notes.map((note, index) => <ListItem key={index} note={note} />);
+    return (
+      <div className=''>
+        <div className='notes'>
+          <div className='notes-header'>
+            <h2 className='notes-title'>&#9782; notes</h2>
+            <p className='notes-count'>{notes.length}</p>
+          </div>
+        </div>
+        <div className='notes-list'>
+          {notes.map((note, index) => (
+            <ListItem key={index} note={note} />
+          ))}
+        </div>
+      </div>
+    );
   }
+
   return <div>{displayNotes()}</div>;
 };
 
